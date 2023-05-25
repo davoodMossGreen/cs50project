@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">Author</th>
+                <th class="text-start">Title</th>
+                <th class="text-start">Year</th>
+                <th class="text-start">Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+            <tr>
+
+                <td class="text-start">{{ event["author"] }}</td>
+                <td class="text-start">{{ event["title"] }}</td>
+                <td class="text-start">{{ event["year"] }}</td>
+                <td class="text-start">{{ event["timestamp"]  }}</td>
+            </tr>
+            {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

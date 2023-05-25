@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Books
+{% endblock %}
+
+{% block main %}
+    <header>
+        <a href="/add" class="btn btn-outline-success">Add a book</button></a>
+        <a href="/deleteBook" class="btn btn-outline-danger">Delete a book</button></a>
+    </header>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">Author</th>
+                <th class="text-start">Title</th>
+                <th class="text-start">Year</th>
+                <th class="text-start">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+
+                <td class="text-start">{{ book["author"] }}</td>
+                <td class="text-start">{{ book["title"] }}</td>
+                <td class="text-start">{{ book["year"] }}</td>
+                <td class="text-start">{{ book["description"] }}</td>
+            </tr>
+            {% endfor %}
+    </tbody>
+    </table>
+    <footer class="mb-5 small text-center text-muted">
+        <a href="/deleteAccount" class="btn btn-outline-danger">Delete account</button></a>
+    </footer>
+{% endblock %}
